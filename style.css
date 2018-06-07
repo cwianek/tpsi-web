@@ -1,0 +1,167 @@
+html,body{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    width: 80px;
+    height: 60px;
+}
+
+.header{
+    background-color: #FF00D8;
+}
+
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navigation{
+    flex-direction: row;
+}
+
+.navigation a{
+    display: inline-block;
+    width: 120px;
+}
+
+/*@media only screen and (min-width: 1000px) {*/
+    /*.main-content{*/
+        /*display: flex;*/
+        /*flex-direction: row;*/
+    /*}*/
+
+    /*.navigation{*/
+        /*padding: 10px;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 1000px) {*/
+    /*.main-content{*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+    /*}*/
+
+    /*.navigation{*/
+        /*display: flex;*/
+        /*flex-direction: row;*/
+        /*flex: 1 0 100px;*/
+    /*}*/
+/*}*/
+
+nav {
+    flex: 1 0 120px;
+    justify-content: center;
+    background: linear-gradient(#FF00D8, #FFDBF9);
+}
+
+nav a{
+    margin: 10px auto;
+}
+
+h4 {
+    font-family: Consolas;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+a:not(:hover){
+    text-decoration: none;
+}
+
+.footer{
+    background-color: #FFDBF9;
+}
+
+.content{
+    flex: 1 0 80%;
+}
+
+input:invalid {
+    border: 5px dotted red;
+}
+
+thead tr{
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: black;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: purple;
+}
+
+tr:hover td{
+    background-color: yellow;
+}
+
+tr:hover input{
+    color: black;
+}
+
+tbody input {
+    background-color: inherit;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.content section:not(:target){
+    display: none;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    padding: 2px;
+}
+
+@media print{
+    *{
+        color: black;
+        background-color: white;
+    }
+
+    .header, .footer, .search, button, .navigation{
+        display: none;
+    }
+
+    .actions{
+        display: none;
+    }
+
+    input, select, textarea{
+        color: black !important;
+        border: none !important;
+    }
+
+    table tr
+    {
+        border-bottom:1px solid black;
+    }
+
+    table{
+        border-collapse: collapse;
+    }
+
+    tr:hover td{
+        background-color: white !important;
+    }
+
+}
+

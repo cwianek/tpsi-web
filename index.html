@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/knock.js"></script>
+    <script type="text/javascript" src="./js/mapping.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</head>
+<body>
+<header class="header">
+    <img alt="student logo" class="logo" src="https://www.concordia.ca/content/dam/common/icons/303x242/graduate-students.png"/>
+    <div class="title">Students Manager</div>
+</header>
+
+<main class="main-content">
+    <nav class="navigation">
+        <a class="link" href="#students">Students</a>
+        <a class="link" href="#courses">Courses</a>
+    </nav>
+
+    <div class="content">
+        <section id="students" class="section">
+            <h4>List of students</h4>
+            <form>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Birthdate</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                    <tr class="search">
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: students">
+                    <tr>
+                        <td>
+                            <input type="number" readonly data-bind="value: index">
+                        </td>
+                        <td>
+                            <input type="text" required data-bind="value: name">
+                        </td>
+                        <td>
+                            <input type="text" required data-bind="value: surname" placeholder="Name">
+                        </td>
+                        <td>
+                            <input type="date" min="1900-01-01" max="2018-01-01"  value="1994-01-01" required>
+                        </td>
+                        <td class="actions">
+                            <a class="button" href="#grades">See grades</a>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" readonly value="12312">
+                        </td>
+                        <td>
+                            <input type="text" required value="Name2" placeholder="Name">
+                        </td>
+                        <td>
+                            <input type="text" required value="Surname2" placeholder="Surame">
+                        </td>
+                        <td>
+                            <input type="date" min="1900-01-01" max="2018-01-01" value="1996-01-01" required>
+                        </td>
+                        <td class="actions">
+                            <a href="#grades" class="button">See grades</a>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+            <button>Add student</button>
+        </section>
+
+        <section id="courses" class="section">
+            <h4>List of courses</h4>
+            <form>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Lecturer</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                    <tr class="search">
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" value="Math">
+                        </td>
+                        <td>
+                            <input type="text" value="Lecturer Numberone" required>
+                        </td>
+                        <td class="actions">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+            <button>Add course</button>
+        </section>
+
+
+        <section id="grades" class="section">
+            <h4>List of grades</h4>
+            <form>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Grade</th>
+                        <th>Date</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                    <tr class="search">
+                        <th>
+                            <select>
+                                <option value="Math">Math</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="WF">WF</option>
+                            </select>
+                        </th>
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th>
+                            <input type="search" placeholder="Search...">
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" value="Math">
+                        </td>
+                        <td>
+                            <input type="number" min="2" max="5" step="0.5" value="5" required>
+                        </td>
+                        <td>
+                            <input type="date" min="1900-01-01" max="2018-01-01" value="2010-01-02" required>
+                        </td>
+                        <td class="actions">
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <div>Adam Cwian</div>
+        <a href="http://www.cs.put.poznan.pl">Institute of Computer Science</a>
+        <a href="http://www.fc.put.poznan.pl">Poznan university of technology</a>
+    </div>
+</footer>
+</body>
+</html>
