@@ -63,37 +63,18 @@
                             <input type="text" required data-bind="value: surname" placeholder="Name">
                         </td>
                         <td>
-                            <input type="date" min="1900-01-01" max="2018-01-01"  value="1994-01-01" required>
+                            <input type="date" min="1900-01-01" max="2018-01-01"  data-bind="value: birthdate" required>
                         </td>
                         <td class="actions">
                             <a class="button" href="#grades">See grades</a>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="number" readonly value="12312">
-                        </td>
-                        <td>
-                            <input type="text" required value="Name2" placeholder="Name">
-                        </td>
-                        <td>
-                            <input type="text" required value="Surname2" placeholder="Surame">
-                        </td>
-                        <td>
-                            <input type="date" min="1900-01-01" max="2018-01-01" value="1996-01-01" required>
-                        </td>
-                        <td class="actions">
-                            <a href="#grades" class="button">See grades</a>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button data-bind="click: $parent.editStudent" >Edit</button>
+                            <button data-bind="click: $parent.deleteStudent">Delete</button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </form>
-            <button>Add student</button>
+            <button data-bind="click: addStudent" >Add student</button>
         </section>
 
         <section id="courses" class="section">
@@ -116,23 +97,23 @@
                         <th></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-bind="foreach: courses">
                     <tr>
                         <td>
-                            <input type="text" value="Math">
+                            <input type="text" data-bind="value: name" required>
                         </td>
                         <td>
-                            <input type="text" value="Lecturer Numberone" required>
+                            <input type="text" data-bind="value: lecturer" required>
                         </td>
                         <td class="actions">
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button data-bind="click: $parent.editCourse">Edit</button>
+                            <button data-bind="click: $parent.deleteCourse">Delete</button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </form>
-            <button>Add course</button>
+            <button data-bind="click: addCourse">Add course</button>
         </section>
 
 

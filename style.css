@@ -30,6 +30,16 @@ body{
     width: 120px;
 }
 
+nav {
+    flex: 1 0 120px;
+    justify-content: center;
+    background: linear-gradient(#FF00D8, #FFDBF9);
+}
+
+nav a{
+    margin: 10px auto;
+}
+
 /*@media only screen and (min-width: 1000px) {*/
     /*.main-content{*/
         /*display: flex;*/
@@ -56,15 +66,7 @@ body{
     /*}*/
 /*}*/
 
-nav {
-    flex: 1 0 120px;
-    justify-content: center;
-    background: linear-gradient(#FF00D8, #FFDBF9);
-}
 
-nav a{
-    margin: 10px auto;
-}
 
 h4 {
     font-family: Consolas;
